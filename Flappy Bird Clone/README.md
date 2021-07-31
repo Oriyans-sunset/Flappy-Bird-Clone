@@ -1,3 +1,3 @@
-# flappy-bird-assets
+# flappy-bird-clone
 
-Assets to develop the Flappy Bird Game
+A Flappy Bird clone made using pygame
