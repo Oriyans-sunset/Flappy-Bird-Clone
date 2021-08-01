@@ -8,9 +8,9 @@ pygame.display.set_caption('Flappy')
 clock = pygame.time.Clock()
 
 #background
-ground_surface = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/base.png')
+ground_surface = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/base.png')
 ground_surface = pygame.transform.scale2x(ground_surface)
-background_surface = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/background-day.png')
+background_surface = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/background-day.png')
 background_surface_height = background_surface.get_height()
 background_surface = pygame.transform.scale(background_surface, (500, background_surface_height))
 
@@ -74,33 +74,33 @@ def game_over_animation(game_over_text_rect_list):
         return game_over_text_rect_list[round(game_over_text_index)]
 
 #player
-bird_surface_downflap = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/bluebird-downflap.png')
-bird_surface_midflap = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/bluebird-upflap.png')
-bird_surface_upflap = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/bluebird-downflap.png')
+bird_surface_downflap = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/bluebird-downflap.png')
+bird_surface_midflap = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/bluebird-upflap.png')
+bird_surface_upflap = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/bluebird-downflap.png')
 
 bird_surface_downflap_rect = bird_surface_downflap.get_rect(midbottom = (100, 180))
 bird_animation_surface_list = [bird_surface_downflap, bird_surface_midflap]
 
 #pipes
-pipe_surface_bottom = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/pipe-green.png')
+pipe_surface_bottom = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/pipe-green.png')
 pipe_rect_list = []
-pipe_surface_upper = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/pipe-red.png')
+pipe_surface_upper = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/pipe-red.png')
 pipe_surface_upper = pygame.transform.rotate(pipe_surface_upper, 180)
 upper_pipe_rect_list  = []
 
 #score
-test_font = pygame.font.Font('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/joystix/joystix monospace.ttf', 20)
+test_font = pygame.font.Font('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/joystix/joystix monospace.ttf', 20)
 
 #game over text
-game_over_text_surface = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/sprites/gameover.png')
+game_over_text_surface = pygame.image.load('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/sprites/gameover.png')
 game_over_text_surface = pygame.transform.scale(game_over_text_surface, (290, 70))
 game_over_text_surface_rect = game_over_text_surface.get_rect(center = (250, 200))
 game_over_text_surface_rect_scaled = game_over_text_surface_rect.inflate(10, 10)
 game_over_text_rect_list = [game_over_text_surface_rect, game_over_text_surface_rect_scaled]
 
 #sound
-die_sound = pygame.mixer.Sound('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/audio/point.wav')
-wing_sound = pygame.mixer.Sound('/Users/priyanshurastogi/Downloads/Flappy Bird Clone/audio/wing.wav')
+die_sound = pygame.mixer.Sound('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/audio/point.wav')
+wing_sound = pygame.mixer.Sound('/Users/priyanshurastogi/Downloads/Flappy-Bird-Clone-Pygame/audio/wing.wav')
 
 #varibles
 game_active = True
