@@ -15,7 +15,7 @@ background_surface_height = background_surface.get_height()
 background_surface = pygame.transform.scale(background_surface, (500, background_surface_height))
 
 def get_score():
-        global current_time, start_time
+        global current_time, start_time     
         current_time = pygame.time.get_ticks() - start_time
         return round(current_time/1000)
 
@@ -31,10 +31,11 @@ def bird_animation(bird_animation_surface_list):
         return bird_animation_surface_list[round(bird_index)]
     
 def pipe_movement(pipe_rect_list):
+    global pipe_speed     
     if pipe_rect_list:
         for rect in pipe_rect_list:
             screen.blit(pipe_surface_bottom, rect)
-            rect.x -= 5
+            rect.x -= 5 + pipe_speed
         pipe_rect_list = [obstacle for obstacle in pipe_rect_list if rect.x >= -50]
         return pipe_rect_list
     else:
@@ -44,7 +45,7 @@ def upper_pipe_movement(upper_pipe_rect_list):
     if upper_pipe_rect_list:
         for rect in upper_pipe_rect_list:
             screen.blit(pipe_surface_upper, rect)
-            rect.x -= 5
+            rect.x -= 5 + pipe_speed
         upper_pipe_rect_list = [obstacle for obstacle in upper_pipe_rect_list if rect.x >= -50]
         return upper_pipe_rect_list
     else:
@@ -107,6 +108,7 @@ bird_index = 0
 game_over_text_index = 0
 gravity = 0
 start_time = 0
+pipe_speed = 0
 
 #events
 pipe_event = pygame.USEREVENT + 1
@@ -131,6 +133,7 @@ while True:
                         if game_active == False:
                                 game_active = True 
                                 gravity = 0
+                                pipe_speed = 0
                                 pygame.time.delay(500)
                                 bird_surface_downflap_rect.y = 100
                                 start_time = pygame.time.get_ticks()
@@ -162,6 +165,8 @@ while True:
         bird_surface_downflap_rect.y += gravity
         
         #pipe
+        if score%25 == 0:
+                pipe_speed = pipe_speed + 0.01724137931
         pipe_rect_list = pipe_movement(pipe_rect_list)
         upper_pipe_rect_list = upper_pipe_movement(upper_pipe_rect_list)
         game_active = pipe_collisons(bird_surface_downflap_rect, pipe_rect_list, upper_pipe_rect_list)
