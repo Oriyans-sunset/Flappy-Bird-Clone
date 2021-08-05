@@ -1,6 +1,7 @@
 # flappy-bird-clone
 
 A Flappy Bird clone made using pygame.
+Learn more about pygame - https://www.pygame.org/wiki/about?parent=
 
 Playing the game-
 
