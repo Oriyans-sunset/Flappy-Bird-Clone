@@ -7,7 +7,7 @@ Playing the game-
 
 Method 1:
 1) Open Flappy-Bird-Clone.py in any python IDE or text editor
-2) Open terminal to install pygame module using 'pip install pygame'
+2) Open terminal to install pygame module using '**pip install pygame**' (install python first if error occurs)
 3) Run the .py file in the IDE/text editor
 
 Method 2 (only for MacOS):
