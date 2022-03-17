@@ -8,7 +8,7 @@ Playing the game-
 Method 1:
 1) Open termianl in folder for Flappy-Bird-Clone.py
 2) Install pygame module using '**pip install pygame**' (install python first if error occurs)
-3) Run the .py file using the command **python3 Flappy-Bird-Clone.py
+3) Run the .py file using the command '**python3 Flappy-Bird-Clone.py'
 
 Method 2:
 1) Open Flappy-Bird-Clone.py in any python IDE or text editor
